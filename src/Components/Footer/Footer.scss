@@ -1,0 +1,179 @@
+@import "../../style.scss";
+
+.footer {
+    width: 100%;
+    min-height: 550px;
+    background-color: #121212;
+    position: relative;
+    overflow: hidden;
+
+    @include mobile{
+        min-height: auto;
+    }
+
+    .content-p {
+        width: 100%;
+        height: auto;
+        padding: 80px 170px;
+        // background-color: #121212;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        @include mobile{
+            padding: 70px 30px;
+            gap: 30px;
+        }
+
+        .top {
+
+            h1 {
+                font-size: 40px;
+                color: white;
+                @include mobile{
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .middle {
+            display: flex;
+            align-items: start;
+            gap: 90px;
+            @include mobile{
+                gap: 20px;
+            }
+
+            .f-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                span {
+                    font-size: 12px;
+                    font-weight: lighter;
+                    color: white;
+                }
+
+                ul {
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    li {
+                        color: white;
+                        font-size: 15px;
+                        cursor: pointer;
+                        position: relative;
+                        @include mobile{
+                            font-size: 12px;
+                        }
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto 0;
+                            left: -15px;
+                            width: 6px;
+                            height: 6px;
+                            border-radius: 50%;
+                            background-color: white;
+                            transform: scale(0);
+                            transition: all .4s ease-in-out;
+                        }
+
+                        &.active::after {
+                            transform: scale(1) !important;
+                        }
+
+                        &:hover::after {
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom {
+        width: 100%;
+        height: 60px;
+        background-color: rgba($color: #ffffff, $alpha: .2);
+        backdrop-filter: blur(10px);
+        position: relative;
+        overflow: hidden;
+        color: white;
+        font-weight: lighter;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 50px;
+        z-index: 2;
+        
+        @include mobile{
+            padding: 0 20px;
+        }
+
+        span{
+            cursor: pointer;
+            font-size: 15px;
+            @include mobile{
+                font-size: 12px;
+            }
+        }
+    }
+
+    .f-filter {
+        // backdrop-filter: blur(20px);
+        filter: blur(10px);
+        opacity: .7;
+        border-radius: 50%;
+        z-index: 1;
+        position: absolute;
+    }
+
+    .circle-i {
+        width: 230px;
+        height: 230px;
+        bottom: -170px;
+        left: -149px;
+        background-color: #279EFF;
+        @include mobile{
+            width: 40px;
+            height: 40px;   
+        }   
+    }
+
+    .circle-iii {
+        width: 100px;
+        height: 100px;
+        bottom: -20px;
+        right: 100px;
+        background-color: #A980FF;
+
+        @include mobile{
+            width: 40px;
+            height: 40px;   
+        }
+    }
+
+    img{
+        width: 215px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 130px;
+        margin: auto 0;
+        opacity: .4;
+
+        @include mobile{
+            width: 80px;
+            top: 280px;
+            margin: 0;
+            right: 40px;
+        }
+    }
+
+}

@@ -1,0 +1,261 @@
+@import "../../style.scss";
+
+.events {
+    overflow: hidden;
+
+    .top {
+        background: url('../../Assets/1.jpg');
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 700px;
+        color: #fff;
+        position: relative;
+        padding: 120px 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include mobile {
+            padding: 0;
+            height: 100vh;
+        }
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba($color: #000000, $alpha: .8);
+            backdrop-filter: blur(8px);
+
+            @include mobile {
+                backdrop-filter: blur(4px);
+            }
+        }
+
+        .contents {
+            z-index: 20;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding-top: 70px;
+            gap: 50px;
+
+            @include mobile {
+                padding-top: 100px;
+                padding: 50px;
+                width: 100%;
+                height: auto;
+            }
+
+            h1 {
+                color: white;
+                font-weight: normal;
+                text-align: center;
+                margin: 0;
+                font-size: 65px;
+
+                @include mobile {
+                    font-size: 50px;
+                }
+
+                span {
+                    color: #279EFF;
+                }
+            }
+
+            .text {
+                width: 700px;
+
+                @include mobile {
+                    width: 100%;
+                    // padding: 0 30px;
+                }
+
+                p {
+                    text-align: center;
+                    font-weight: lighter;
+
+                    @include mobile {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    .events-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 100px;
+        padding: 70px;
+
+        @include mobile {
+            padding: 70px 20px 156px;
+        }
+
+        h1 {
+            font-weight: normal;
+        }
+
+        .event {
+            display: flex;
+            width: 90%;
+            height: 600px;
+            flex-direction: column;
+            position: relative;
+            margin-bottom: 100px;
+
+            @include mobile {
+                height: auto;
+                margin-bottom: 0;
+            }
+
+            .e-top {
+                width: 100%;
+                height: 400px;
+                // position: relative;
+                z-index: 20;
+
+
+                .image {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+
+                    }
+
+                    &::after {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+                        background-color: rgba($color: #000000, $alpha: .6);
+                        backdrop-filter: blur(1px);
+                    }
+
+                    .title {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        color: white;
+                        padding: 60px;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        z-index: 3;
+                        // font-family: 'Teko', sans-serif;
+
+                        @include mobile {
+                            width: 100%;
+                            height: 100%;
+                            padding: 10px;  
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        h1 {
+                            font-size: 50px;
+
+                            @include mobile {
+                                font-size: 30px;
+                                text-align: center;
+                            }
+                        }
+
+                        p {
+                            font-weight: lighter;
+                            font-size: 15px;
+                        }
+                    }
+                }
+
+            }
+
+            .e-bottom {
+                width: 100%;
+                height: 100%;
+                background-color: rgba(240, 240, 240, .3);
+                // background-color: rgba(240, 240, 240, 1);
+                padding: 60px;
+                padding-right: 100px;
+                position: relative;
+                backdrop-filter: blur(5px);
+                border: 1px solid rgba($color: #949494, $alpha: .3);
+                z-index: 20;
+
+                @include mobile {
+                    display: none;
+                }
+
+                p {
+                    color: #000000;
+                    font-size: 15px;
+                }
+
+                .b-fz-l {
+                    position: absolute;
+                    bottom: 30px;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    text-align: center;
+
+                    span {
+                        font-style: italic;
+                        // font-weight: lighter;
+                        color: #2c2c2c;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+
+            .e-flt {
+                backdrop-filter: blur(20px);
+                filter: blur(20px);
+                opacity: .8;
+                border-radius: 50%;
+                position: absolute;
+            }
+
+            .e-ci {
+                width: 200px;
+                height: 200px;
+                bottom: 100px;
+                left: -100px;
+                background-color: #279EFF;
+            }
+
+            .e-cii {
+                width: 120px;
+                height: 120px;
+                bottom: 180px;
+                right: 90px;
+                background-color: #279EFF;
+            }
+
+            .e-ciii {
+                width: 170px;
+                height: 170px;
+                bottom: -70px;
+                right: -40px;
+                background-color: #FC80FF;
+            }
+        }
+    }
+}
