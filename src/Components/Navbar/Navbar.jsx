@@ -57,9 +57,9 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <div className="top-navigation">
-        <div className="one">
+        {/* <div className="one">
           <img src={Logo} alt="OGS" />
-        </div>
+        </div> */}
         <div className="two">
           <h1>O G S</h1>
         </div>

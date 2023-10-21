@@ -4,6 +4,7 @@ import video from '../../Assets/3.mp4'
 import gsap from 'gsap';
 import Loader from '../../Components/Loader/Loader';
 import president from '../../Assets/6.jpg';
+import Logo from '../../Assets/logo.png';
 import { slides, slides4 } from '../../Components/ImageData/ImageData';
 import CarouselMarquee from '../../Components/Marquee/Marquee';
 import UniqueCarousel from '../../Components/UniqueCarousel/UniqueCarousel';
@@ -73,11 +74,14 @@ const Home = () => {
                             Your browser does not support the video tag.
                         </video>
                         <div className="hero-contents">
+                            <img src={Logo} alt="" />
                             <div className="headings">
-                                <h1>Welcome to the Legacy of CMS Grammar School, Lagos</h1>
-                                <h1><span>Unite</span>. Inspire. <span>Flourish.</span></h1>
+                                {/* <h1><span>NISI</span>. DOMINUS. <span>FRUSTRA.</span></h1> */}
+                                <h1>Founded June 6, 1859</h1>
+                                <h1>The <span>First</span> And The <span>Greatest</span>.</h1>
+                                {/* <h1>Welcome to the Legacy of CMS Grammar School, Lagos</h1> */}
                             </div>
-                            <div className="desc">
+                            <div className="desc">  
                                 {/* <i class="fa-solid fa-angles-down"></i> */}
                                 <i class="fa-brands fa-facebook-f"></i>
                                 <i class="fa-brands fa-instagram"></i>

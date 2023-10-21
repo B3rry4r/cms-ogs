@@ -9,7 +9,7 @@
         position: absolute;
         width: 100%;
         z-index: 30;
-        padding: 20px 0;
+        padding: 60px 0 20px;
         top: 0;
         height: auto;
         display: flex;
@@ -33,7 +33,7 @@
 
         .two {
             h1 {
-                font-size: 40px;
+                font-size: 30px;
                 color: white;
                 
                 @include mobile{
