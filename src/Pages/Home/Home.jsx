@@ -158,6 +158,7 @@ const Home = () => {
                                 <div className="circle-c b-filter"></div>
                             </div>
                             <div className="content">
+                                <img className='o-oh-display' src={president} alt="news-image-1" />
                                 <h3>Why I Am Still Active At 90 - Akinola, First Lagos State  Surveyor General</h3>
                                 <p className="middle">
                                     <i class="fa-regular fa-calendar-days"></i> 2023-01-16 05:51:41
@@ -174,6 +175,7 @@ const Home = () => {
                                 <div className="circle-c b-filter"></div>
                             </div>
                             <div className="content">
+                                <img className='o-oh-display' src={president} alt="news-image-1" />
                                 <h3>CMS Grammar School Celebrates 164th anniversary</h3>
                                 <p className="middle">
                                     <i class="fa-regular fa-calendar-days"></i> 2023-01-16 05:51:41
@@ -189,6 +191,7 @@ const Home = () => {
                                 <div className="circle-c b-filter"></div>
                             </div>
                             <div className="content">
+                                <img className='o-oh-display' src={president} alt="news-image-1" />
                                 <h3>Bayo Oduneye: Man Behind National Troupe</h3>
                                 <p className="middle">
                                     <i class="fa-regular fa-calendar-days"></i> 2023-01-16 05:51:41
