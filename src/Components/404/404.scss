@@ -41,6 +41,7 @@
             color: #279EFF;
             font-weight: lighter;
             cursor: default;
+            text-align: center;
 
             @include mobile{
                 font-size: 160px;
@@ -51,6 +52,7 @@
                 font-weight: lighter;
                 cursor: default;
                 color: black;
+                text-align: center;
                 @include mobile{
                     font-size: 160px;
                 }  
@@ -59,6 +61,7 @@
 
         p{
             font-size: 25px;
+            text-align: center;
 
             @include mobile{
                 font-size: 17px;
