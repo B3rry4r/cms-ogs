@@ -99,7 +99,7 @@ const Navbar = () => {
       <div className="sticky-navigation">
         <div className="left-sticky">
           <div className="container">
-            <h1>OGS.</h1>
+            <img src={Logo} alt="logo" />
           </div>
         </div>
         <div className="right-sticky" onClick={openMenu} >
