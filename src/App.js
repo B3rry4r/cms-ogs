@@ -6,6 +6,8 @@ import Footer from './Components/Footer/Footer';
 import Events from './Pages/Events/Events';
 import Error from './Components/404/404';
 import Projects from './Pages/Projects/Projects';
+import SignUp from './Components/SignUp/SignUp';
+import SignIn from './Components/SignIn/SignIn';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Route exact path='/' element={<Home/>} />
       <Route path='/events' element={<Events/>} />
       <Route path='/projects' element={<Projects/>} />
+      <Route path='/sign-up' element={<SignUp/>} />
+      <Route path='/sign-in' element={<SignIn/>} />
       <Route path='*' element={<Error/>} />
     </Routes>
     <Footer/>

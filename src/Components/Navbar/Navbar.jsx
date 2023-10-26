@@ -3,10 +3,11 @@ import Logo from '../../Assets/logo.png';
 import './Navbar.scss';
 import { useEffect } from 'react';
 import gsap from 'gsap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const left = document.querySelector('.left-sticky');
@@ -94,6 +95,12 @@ const Navbar = () => {
               OGS
             </NavLink>
           </li>
+          <li className='sign'>
+            <NavLink activeClassName='active' to='/sign-up'>
+              Sign-Up
+            </NavLink>
+            <span className='sign-in-btn' onClick={() => { navigate('/sign-in') }} >Sign-In</span>
+          </li>
         </ul>
       </div>
       <div className="sticky-navigation">
@@ -149,10 +156,17 @@ const Navbar = () => {
           </div>
           <div className="bottom">
             <ul>
-              <li>Instagram</li>
-              <li>Facebook</li>
-              <li>Threads</li>
-              <li>X</li>
+              <li onClick={
+                () => {
+                  navigate('/sign-in')
+                  openMenu()
+                }
+              } >Sign In</li>
+              <li onClick={
+                () => {
+                  navigate('/sign-up')
+                  openMenu()
+                }} >Sign Up</li>
             </ul>
           </div>
         </div>

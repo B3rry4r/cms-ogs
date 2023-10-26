@@ -62,9 +62,14 @@
                         opacity: .9;
                         z-index: -1;
 
+                        @include tablet{
+                            width: 230px;
+                            top: -800px;
+                        }
+
                         @include mobile{
                             width: 150px;
-                            // top: -100px;
+                            top: -350px;
                         }
                     }
 
@@ -78,6 +83,10 @@
                         margin-top: 40px;
                         padding: 0px 250px;
 
+                        @include tablet{
+                            padding: 30px;
+                        }
+
                         @include mobile{
                             padding: 60px 60px 60px;
                             gap: 20px;
@@ -89,8 +98,13 @@
                             text-align: center;
                             margin: 0;
                             font-size: 20px;
+
+                            @include tablet{
+                                font-size: 30px;
+                            }
+
                             @include mobile{
-                                // font-size: 56px;
+                            font-size: 20px;
                             }
 
                             span {
@@ -99,6 +113,11 @@
 
                             &:nth-of-type(1) {
                                 font-size: 17px;
+
+                                @include tablet{
+                                    font-size: 24px;
+                                }
+
                                 @include mobile{
                                     font-size: 12px;
                                 }
@@ -226,6 +245,11 @@
                 justify-content: center;
                 padding: 180px 100px 110px;
                 gap: 30px;
+
+                @include tablet{
+                    padding: 20px;
+                    height: auto;
+                }
 
                 @include mobile {
                 margin-top: 120px;

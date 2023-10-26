@@ -18,11 +18,12 @@
         justify-content: center;
         gap: 20px;
         z-index: 40;
-        @include mobile{
+
+        @include mobile {
             padding: 70px 0;
         }
 
-        
+
 
         .one {
             img {
@@ -35,8 +36,8 @@
             h1 {
                 font-size: 30px;
                 color: white;
-                
-                @include mobile{
+
+                @include mobile {
                     font-size: 30;
                     font-weight: normal;
                 }
@@ -51,11 +52,46 @@
             justify-content: center;
             gap: 30px;
             padding: 0;
-            @include mobile{
-                display: none;  
+
+            @include mobile {
+                display: none;
             }
 
             li {
+
+                &.sign {
+                    position: relative;
+
+                    &:hover {
+                        .sign-in-btn {
+                            opacity: 1;
+                        right: -106px;
+                        }
+                    }
+                    .sign-in-btn {
+                        position: absolute;
+                        font-weight: lighter;
+                        cursor: pointer;
+                        color: white;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto 0;
+                        right: -66px;
+                        opacity: 0;
+                        background-color: rgba($color: #ffffff, $alpha: .2);
+                        border-radius: 20px;
+                        border: 1px solid rgba($color: #ffffff, $alpha: .1);
+                        padding: 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all .5s ease-in-out;
+
+                        &:hover{
+                            background-color: rgba(39, 158, 255, .2);
+                        }
+                    }
+                }
                 a {
                     color: white;
                     font-weight: lighter;
@@ -132,11 +168,11 @@
 
             .container {
 
-                
-                img{
+
+                img {
                     width: 25px;
 
-                    @include mobile{
+                    @include mobile {
                         width: 17px;
                     }
                 }
@@ -224,7 +260,8 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            @include mobile{
+
+            @include mobile {
                 width: 100%;
             }
 
@@ -318,23 +355,15 @@
                         position: relative;
                         color: black;
                         font-weight: normal;
-                        font-size: 15px;
+                        font-size: 13px;
+                        padding: 10px 20px;
+                        border-radius: 20px;
+                        border: 1px solid black;
+                        transition: all .4s ease-in-out;
 
-                        &:after {
-                            position: absolute;
-                            content: "";
-                            width: 0%;
-                            transition: all .5s ease-in-out;
-                            height: 1px;
-                            bottom: -3px;
-                            left: 50%;
-                            background-color: #191919;
-                            border-radius: 4px;
-                        }
-
-                        &:hover::after {
-                            width: 100%;
-                            left: 0;
+                        &:hover{
+                            background-color: black;
+                            color: white;
                         }
                     }
                 }
