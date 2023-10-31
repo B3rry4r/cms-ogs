@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nominee Card Example</title>
+    <style>
+        .nominee-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            margin: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nominee-image {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .nominee-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .nominee-position {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .nominee-description {
+            color: #333;
+        }
+
+        .vote-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .vote-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="nominee-card">
+        <img class="nominee-image" src="https://via.placeholder.com/150" alt="Nominee Image">
+        <h3 class="nominee-name">John Doe</h3>
+        <p class="nominee-position">Presidential Candidate</p>
+        <p class="nominee-description">An accomplished leader with a proven track record in organizational management and community development.</p>
+        <button class="vote-button">Vote for John Doe</button>
+    </div>
+</body>
+</html>

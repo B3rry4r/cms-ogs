@@ -14,6 +14,7 @@
         &::after {
             content: "";
             position: absolute;
+            backdrop-filter: blur(3px);
             top: 0;
             left: 0;
             width: 100%;
@@ -47,45 +48,6 @@
                 @include mobile{
                     font-size: 60px;
                 }
-
-                // &::before {
-                //     content: "";
-                //     position: absolute;
-                //     bottom: 0;
-                //     top: 0;
-                //     right: 10px;
-                //     margin: auto 0;
-                //     width: 10px;
-                //     height: 10px;
-                //     background-color: white;
-                //     border-radius: 50%;
-                //     transition: all .4s ease-in-out;
-                // }
-
-                // &:hover::before {
-                //     transform: scale(1.1);
-                //     background-color: #279EFF;
-                // }
-
-                // &::after {
-                //     content: "";
-                //     position: absolute;
-                //     bottom: 0;
-                //     top: 0;
-                //     left: 10px;
-                //     right: 0;
-                //     margin: auto 0;
-                //     width: 10px;
-                //     height: 10px;
-                //     background-color: white;
-                //     border-radius: 50%;
-                //     transition: all .4s ease-in-out;
-                // }
-
-                // &:hover::after {
-                //     transform: scale(1.1);
-                //     background-color: #279EFF;
-                // }
 
                 span {
                     color: #279EFF;

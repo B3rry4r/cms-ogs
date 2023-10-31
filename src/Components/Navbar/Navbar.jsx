@@ -81,8 +81,8 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName='active' to='/executives'>
-              Executives
+            <NavLink activeClassName='active' to='/nominees'>
+              Nominee's
             </NavLink>
           </li>
           <li>
@@ -138,8 +138,8 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink activeClassName='active' to='/executives' onClick={openMenu} >
-                  Executives
+                <NavLink activeClassName='active' to='/nominees' onClick={openMenu} >
+                  Nominee's
                 </NavLink>
               </li>
               <li>
