@@ -1,0 +1,50 @@
+
+// .small{
+//     position: relative;
+// }
+
+/*
+The loaders use CSS custom properties (variables) to control the attributes of the loaders
+*/
+:root{
+	--loader-width: 25px;
+	--loader-height: 25px;
+	--loader-color-primary: #8f8f8f;
+	--loader-color-secondary: #ffffff;
+	--line-width: 2px;
+	--animation-duration: .5s;
+	--loader-initial-scale: 0.1;
+}
+.loader,.loader:before,.loader:after{
+	box-sizing: border-box;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+/*
+In order to get optimal results, please only change the 
+variables above and don't change anything in the actual loader code
+*/
+	
+	
+
+@keyframes circle-loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader.simple-circle {
+    transform-origin: center center;
+    position: absolute;
+    top: 0;left: 0;right: 0;bottom: 0;
+    margin: auto;
+    border: var(--line-width, 2px) solid var(--loader-color-secondary, #fff);
+    border-right-color: var(--loader-color-primary, #279EFF);
+    width: var(--loader-width, 100px);
+    height: var(--loader-height, 100px);
+    border-radius: 50%;
+    animation: circle-loader var(--animation-duration, 1s) infinite ease-out;
+}

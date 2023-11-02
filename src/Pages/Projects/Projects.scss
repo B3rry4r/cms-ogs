@@ -90,6 +90,10 @@
         justify-content: center;
         background-color: #f0f0f0;
 
+        @include mobile{
+            padding: 70px 0;
+        }
+
         h1{
             font-size: 40px;
             text-align: center;
@@ -112,12 +116,17 @@
 
             @include mobile{
             grid-template-columns: 1fr;
+
             }
 
             .project{
                 width: 400px;
                 height: 420px;
                 background-color: #dddddd;
+
+                @include mobile{
+                    width: 100%;
+                }
 
                 .image{
                     width: 100%;

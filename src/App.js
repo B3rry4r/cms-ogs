@@ -6,9 +6,11 @@ import Footer from './Components/Footer/Footer';
 import Events from './Pages/Events/Events';
 import Error from './Components/404/404';
 import Projects from './Pages/Projects/Projects';
-import SignUp from './Components/SignUp/SignUp';
-import SignIn from './Components/SignIn/SignIn';
-import Nominee from './Pages/Nominee/Nominee';
+import SignUp from './Pages/SignUp/SignUp';
+import SignIn from './Pages/SignIn/SignIn';
+import Nominees from './Pages/Nominees/Nominees';
+import UserDashboard from './Components/UserDashboard/UserDashboard';
+import Voted from './Pages/Voted/Voted';
 
 function App() {
   return (
@@ -18,9 +20,11 @@ function App() {
       <Route exact path='/' element={<Home/>} />
       <Route path='/events' element={<Events/>} />
       <Route path='/projects' element={<Projects/>} />
-      <Route path='/nominees' element={<Nominee/>} />
+      <Route exact path='/nominees' element={<Nominees/>} />
+      <Route path='/nominees/nominee/:id' element={<Voted/>} />
       <Route path='/sign-up' element={<SignUp/>} />
       <Route path='/sign-in' element={<SignIn/>} />
+      <Route path='/dashboard' element={<UserDashboard/>} />
       <Route path='*' element={<Error/>} />
     </Routes>
     <Footer/>

@@ -3,11 +3,34 @@ import Logo from '../../Assets/logo.png';
 import './Navbar.scss';
 import { useEffect } from 'react';
 import gsap from 'gsap';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { jwtDecode } from "jwt-decode";
 
 const Navbar = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
   const navigate = useNavigate()
+  const location = useLocation();
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
+
+  useEffect(() => {
+    const token = user?.token
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      if (decodedToken.exp * 1000 < new Date().getTime()) {
+        handleLogOut()
+      }
+    }
+
+    setUser(JSON.parse(localStorage.getItem('profile')))
+  }, [location, user?.token])
+
+
+
+  const handleLogOut = () => {
+    localStorage.clear('profile');
+    window.location = '/sign-in'
+  }
+
 
   useEffect(() => {
     const left = document.querySelector('.left-sticky');
@@ -58,9 +81,12 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <div className="top-navigation">
-        {/* <div className="one">
-          <img src={Logo} alt="OGS" />
-        </div> */}
+        {user && (
+          <div className="one">
+            {user?.result?.name.slice(0, 1)}
+            {/* <img src={Logo} alt="OGS" /> */}
+          </div>
+        )}
         <div className="two">
           <h1>O G S</h1>
         </div>
@@ -80,14 +106,23 @@ const Navbar = () => {
               Projects
             </NavLink>
           </li>
-          <li>
-            <NavLink activeClassName='active' to='/nominees'>
-              Nominee's
-            </NavLink>
-          </li>
+          {
+            user && (
+              <li>
+                <NavLink activeClassName='active' to='/nominees'>
+                  Nominee's
+                </NavLink>
+              </li>
+            )
+          }
           <li>
             <NavLink activeClassName='active' to='/about'>
               About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeClassName='active' to='/contact-us'>
+              Contact-Us
             </NavLink>
           </li>
           <li>
@@ -95,12 +130,21 @@ const Navbar = () => {
               OGS
             </NavLink>
           </li>
-          <li className='sign'>
-            <NavLink activeClassName='active' to='/sign-up'>
-              Sign-Up
-            </NavLink>
-            <span className='sign-in-btn' onClick={() => { navigate('/sign-in') }} >Sign-In</span>
-          </li>
+          {
+            user ? (
+              <li className='sign-out' onClick={handleLogOut} >
+                Sign-Out
+              </li>
+            ) : (
+              <li className='sign'>
+                <NavLink activeClassName='active' to='/sign-up'>
+                  Sign-Up
+                </NavLink>
+                <span className='sign-in-btn' onClick={() => { navigate('/sign-in') }} >Sign-In</span>
+              </li>
+            )
+          }
+
         </ul>
       </div>
       <div className="sticky-navigation">
@@ -137,14 +181,23 @@ const Navbar = () => {
                   Projects
                 </NavLink>
               </li>
-              <li>
-                <NavLink activeClassName='active' to='/nominees' onClick={openMenu} >
-                  Nominee's
-                </NavLink>
-              </li>
+              {
+                user && (
+                  <li>
+                    <NavLink activeClassName='active' to='/nominees' onClick={openMenu} >
+                      Nominee's
+                    </NavLink>
+                  </li>
+                )
+              }
               <li>
                 <NavLink activeClassName='active' to='/about' onClick={openMenu} >
                   About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink activeClassName='active' to='/contact-us' onClick={openMenu} >
+                  Contact-Us
                 </NavLink>
               </li>
               <li>
@@ -155,19 +208,33 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="bottom">
-            <ul>
-              <li onClick={
-                () => {
-                  navigate('/sign-in')
-                  openMenu()
-                }
-              } >Sign In</li>
-              <li onClick={
-                () => {
-                  navigate('/sign-up')
-                  openMenu()
-                }} >Sign Up</li>
-            </ul>
+            {
+              user ? (
+                <ul>
+                  <li className='user' >{user?.result?.name.slice(0, 1)}</li>
+                  <li onClick={
+                    () => {
+                      openMenu()
+                      handleLogOut()
+                    }
+                  } >Sign Out</li>
+                </ul>
+              ) : (
+                <ul>
+                  <li onClick={
+                    () => {
+                      navigate('/sign-in')
+                      openMenu()
+                    }
+                  } >Sign In</li>
+                  <li onClick={
+                    () => {
+                      navigate('/sign-up')
+                      openMenu()
+                    }} >Sign Up</li>
+                </ul>
+              )
+            }
           </div>
         </div>
       </div>

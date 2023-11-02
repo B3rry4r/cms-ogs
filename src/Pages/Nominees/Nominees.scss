@@ -1,0 +1,307 @@
+@import "../../style.scss";
+
+.vote {
+
+    .vote-top {
+        background-image: url('../../Assets/vote.jpg');
+        background-size: cover;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+
+        &::after {
+            content: "";
+            position: absolute;
+            backdrop-filter: blur(3px);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #000000, $alpha: .8);
+        }
+
+        .contents {
+            padding: 100px;
+            width: 70%;
+            position: relative;
+            z-index: 1;
+            margin-top: 140px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            // justify-content: space-between;
+            @include mobile {
+                padding: 20px;
+                width: 100%;
+            }
+
+            h1 {
+                color: white;
+                text-align: center;
+                font-size: 70px;
+                font-weight: lighter;
+                position: relative;
+                cursor: default;
+
+                @include mobile {
+                    font-size: 60px;
+                }
+
+                span {
+                    color: #279EFF;
+                }
+
+            }
+
+            .text {
+                width: auto;
+
+                @include mobile {
+                    width: auto;
+                    padding: 10px;
+                }
+
+                p {
+                    cursor: default;
+                    font-weight: lighter;
+                    text-align: center;
+                    color: white;
+
+                    @include mobile {
+                        font-size: 13px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .d-l-s-con{
+        width: 100%;
+        height: 100vh;
+        background-color: #f9f9f9;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nominees-container {
+        padding: 100px;
+        align-items: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 50px;
+        width: 100%;
+        height: auto;
+        background-color: rgb(224, 224, 224);
+        color: #000000;
+
+        @include mobile{
+            padding: 100px 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+
+        .nominees {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            list-style: none;
+            margin: 0 auto;
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+
+            @include mobile {
+                grid-template-columns: 1fr;
+            }
+
+            .nominee-card {
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 30px;
+                width: 400px;
+                // margin: 20px;
+                background-color: rgba(249, 249, 249, .7);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+
+                @include mobile{
+                    width: 100%;
+                }
+
+                .nominee-image {
+                    border-radius: 50%;
+                    width: 150px;
+                    height: 150px;
+                    object-fit: cover;
+                    margin-bottom: 15px;
+                }
+
+                .nominee-name {
+                    font-size: 24px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+
+                .nominee-position {
+                    color: #555;
+                    margin-bottom: 15px;
+                    text-align: center;
+                    font-size: 14px;
+                }
+
+                .nominee-description {
+                    color: #333;
+                    text-align: center;
+                }
+
+                .vote-button {
+                    display: block;
+                    width: 100%;
+                    padding: 10px;
+                    margin-top: 20px;
+                    font-size: 16px;
+                    font-weight: lighter;
+                    color: #fff;
+                    background-color: #007BFF;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    text-align: center;
+                    transition: all .4s ease-in-out;
+                }
+
+                .vote-button:hover {
+                    background-color: #005cbe;
+                }
+            }
+        }
+    }
+
+    .real-time-data-section {
+        width: 100%;
+        height: auto;
+        padding: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url('../../Assets/pne.jpg');
+        background-size: cover;
+        position: relative;
+
+        @include mobile {
+            padding: 70px 20px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            backdrop-filter: blur(20px);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #000000, $alpha: .2);
+        }
+
+        .data-container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            cursor: default;
+
+            h1 {
+                font-size: 60px;
+                font-weight: lighter;
+                color: white;
+                text-align: center;
+
+                @include mobile{
+                    font-size: 17px;
+                    text-align: center;
+                }
+            }
+
+            .heading {
+                text-align: center;
+                color: white;
+                font-weight: lighter;
+                font-size: 30px;
+
+                @include mobile{
+                    font-size: 17px;
+                    text-align: center;
+                }
+            }
+
+            .nominees-data-container {
+                width: 100%;
+                height: auto;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 50px;
+                list-style: none;
+                margin: 0 auto;
+                padding: 10px;
+                align-items: center;
+                justify-content: center;
+
+                @include mobile {
+                    grid-template-columns: 1fr;
+                }
+
+                .content {
+                    width: 250px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 30px;
+                    border: 1px solid white;
+                    // border-radius: 20px;
+                    padding: 50px;
+                    color: white;
+                    transition: all .5s ease-in-out;
+                    background-color: rgba($color: #000000, $alpha: .2);
+
+                    &:hover {
+                        border: 1px solid #279EFF;
+                        // transform: scale(1.05);
+                    }
+
+                    p {
+                        text-align: center;
+                        font-weight: 200;
+                    }
+
+                    span {
+                        font-size: 40px;
+                        font-weight: lighter;
+                    }
+                }
+            }
+        }
+    }
+}

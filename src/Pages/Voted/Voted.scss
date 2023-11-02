@@ -1,0 +1,287 @@
+@import "../../style.scss";
+
+.voted {
+    // background-image: url('../../Assets/vote.jpg');
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 5000;
+    overflow: hidden;
+    background-color: #f0f0f0;
+
+
+    .container {
+        background-color: rgba(227, 227, 227, .4);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 60px;
+        gap: 50px;
+        width: 80%;
+        height: 85vh;
+        position: absolute;
+        z-index: 50;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 1px solid rgba($color: #ffffff, $alpha: .2);
+
+        @include mobile{
+            padding: 20px;
+            height: 75vh;
+        }
+
+        .v-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 0 160px;
+            
+            @include mobile{
+                padding: 10px;
+            }
+
+            img {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+
+                @include mobile{
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+
+            p {
+                text-align: center;
+
+                @include mobile{
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .v-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+
+            a,
+            button {
+                width: 95px;
+                height: 37px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                cursor: pointer;
+                color: white;
+                font-size: 13px;
+                font-weight: lighter;
+                transition: all .5s ease-in-out;
+                position: relative;
+            }
+
+            a {
+                background-color: black;
+
+                &:hover {
+                    box-shadow: 0 0 .5rem black;
+                }
+            }
+
+            button {
+                border: none;
+                outline: none;
+                background-color: #279EFF;
+                font-family: 'Raleway', sans-serif;
+
+                &:hover {
+                    box-shadow: 0 0 .7rem #279EFF;
+                }
+            }
+        }
+    }
+
+    .error{
+        background-size: cover;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: 6000;
+        overflow: hidden;
+        background-color: rgba(45, 45, 45, .7);
+        backdrop-filter: blur(5px);
+        transform: scale(0);
+        transition: all .3s ease-in-out;
+
+        &.active{
+            transform: scale(1);
+        }
+
+        .m-container{
+            width: 500px;
+            height: auto;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 .5rem #9b9b9b;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 40px;
+
+            @include mobile{
+                width: 290px;
+                padding: 30px 20px;
+            }
+
+            p{
+                color: crimson;
+                font-weight: normal;
+                text-align: center;
+
+                @include mobile{
+                    font-size: 13px;
+                }
+            }
+
+            span{
+                padding: 12px 20px;
+                border-radius: 30px;
+                border:1px solid black;
+                font-size: 13px;
+                cursor: pointer;
+                transition: all .4s ease-in-out;
+                text-align: center;
+
+                @include mobile{
+                    padding: 8px 15px;
+                    font-size: 11px;
+                }
+                
+                &:hover{
+                    background-color: black;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .s-voted{
+        background-size: cover;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: 6000;
+        overflow: hidden;
+        background-color: rgba(45, 45, 45, .7);
+        backdrop-filter: blur(5px);
+        transform: scale(0);
+        transition: all .3s ease-in-out;
+
+        &.active{
+            transform: scale(1);
+        }
+
+        .v-container{
+            width: 500px;
+            height: auto;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 .5rem #9b9b9b;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 40px;
+
+            @include mobile{
+                width: 290px;
+                padding: 30px 20px;
+            }
+
+            p{
+                color: teal;
+                font-weight: normal;
+                text-align: center;
+                @include mobile{
+                    font-size: 13px;
+                }
+            }
+
+            span{
+                padding: 12px 20px;
+                border-radius: 30px;
+                border:1px solid black;
+                font-size: 13px;
+                cursor: pointer;
+                transition: all .4s ease-in-out;
+                
+                &:hover{
+                    background-color: black;
+                    color: white;
+                }
+
+                @include mobile{
+                    padding: 8px 15px;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+
+    .filtered {
+        filter: blur(20px);
+        opacity: .7;
+        border-radius: 50%;
+    }
+
+    .circle-1 {
+        width: 350px;
+        height: 350px;
+        position: absolute;
+        top: -93px;
+        left: -55px;
+        background-color: #FC80FF;
+    }
+
+    .circle-2 {
+        width: 609px;
+        height: 609px;
+        position: absolute;
+        top: -208px;
+        right: -200px;
+        background-color: #279EFF;
+    }
+
+    .circle-3 {
+        width: 509px;
+        height: 509px;
+        position: absolute;
+        bottom: -224px;
+        left: -200px;
+        background-color: #A980FF;
+    }
+}

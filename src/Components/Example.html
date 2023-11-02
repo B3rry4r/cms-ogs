@@ -2,68 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nominee Card Example</title>
+    <title>Vote Count Display</title>
     <style>
-        .nominee-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            width: 300px;
-            margin: 20px;
-            background-color: #f9f9f9;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
         }
 
-        .nominee-image {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-
-        .nominee-name {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .nominee-position {
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .nominee-description {
+        h1 {
+            margin-bottom: 30px;
             color: #333;
         }
 
-        .vote-button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin-top: 20px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .nominee-vote-counts {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .vote-button:hover {
-            background-color: #0056b3;
+        .nominee {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nominee h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .nominee p {
+            color: #666;
+        }
+
+        span {
+            color: #e91e63;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="nominee-card">
-        <img class="nominee-image" src="https://via.placeholder.com/150" alt="Nominee Image">
-        <h3 class="nominee-name">John Doe</h3>
-        <p class="nominee-position">Presidential Candidate</p>
-        <p class="nominee-description">An accomplished leader with a proven track record in organizational management and community development.</p>
-        <button class="vote-button">Vote for John Doe</button>
+    <h1>CMS OGS Nominee Vote Counts</h1>
+    <div class="nominee-vote-counts">
+        <div class="nominee">
+            <h2>Nominee 1</h2>
+            <p>Total Votes: <span id="nominee1-vote-count">0</span></p>
+        </div>
+        <div class="nominee">
+            <h2>Nominee 2</h2>
+            <p>Total Votes: <span id="nominee2-vote-count">0</span></p>
+        </div>
+        <div class="nominee">
+            <h2>Nominee 3</h2>
+            <p>Total Votes: <span id="nominee3-vote-count">0</span></p>
+        </div>
     </div>
 </body>
 </html>
