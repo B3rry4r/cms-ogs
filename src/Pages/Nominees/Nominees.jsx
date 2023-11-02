@@ -2,12 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { url } from '../../Components/Auth/Auth';
 import './Nominees.scss';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Small from '../../Components/Loader/Small/Small';
 
 const Nominees = () => {
   const [nominees, setNominees] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem('profile')))
+    if (!user?.result?.name) {
+      navigate('/sign-in')
+    }
+  }, [navigate, user?.result?.name])
 
   useEffect(() => {
     setIsLoading(true)
@@ -26,6 +35,14 @@ const Nominees = () => {
     };
     fetchData();
   }, []);
+
+  if (!user?.result?.name) {
+    return (
+      <div className='block' >
+
+      </div>
+    );
+  }
 
   return (
     <div className='vote' >

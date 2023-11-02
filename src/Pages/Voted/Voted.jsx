@@ -6,19 +6,20 @@ import { authAxios, url } from '../../Components/Auth/Auth';
 import Small from '../../Components/Loader/Small/Small';
 
 const Voted = () => {
-  const user = useState(JSON.parse(localStorage.getItem('profile')))
+  const user = JSON.parse(localStorage.getItem('profile'));
   const [errorMessage, setErrorMessage] = useState('');
   const eContent = document.querySelector('.error');
   const [isLoading, setIsLoading] = useState(false)
   const [isVoting, setIsVoting] = useState(false)
   const [nominee, setNominee] = useState([]);
-  const vId = user[0].result._id;
+  const vId = user.result._id;
   const navigate = useNavigate()
   const { id } = useParams();
   const data = {
     voterId: vId
   }
 
+  console.log(user);
 
   useEffect(() => {
     const fetchData = async () => {
