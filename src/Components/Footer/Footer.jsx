@@ -25,10 +25,9 @@ const Footer = () => {
                     <div className="f-container">
                         <span>Connect</span>
                         <ul>
-                            <li>OGS Americas Website</li>
-                            <li>OGS UK & Europe Website</li>
-                            <li>CMS Grammar School Website</li>
-                            <li>View our Ionic Structures</li>
+                            <li><a href="https://cmsogsamericas.org/">OGS Americas Website</a></li>
+                            <li><a href="http://www.cms-ogs-uk.org/">OGS UK & Europe Website</a></li>
+                            <li><a href="http://www.//cmsgrammarschool.org/">CMS Grammar School Website</a></li>
                         </ul>
                     </div>
                     <div className="f-container">
@@ -42,11 +41,10 @@ const Footer = () => {
             </div>
             <div className="bottom">
                     <span>Copyright © 2023 Old Grammarians Society</span>
-                    <span>Code By Excel</span>
+                    <span>Created By Excel</span>
             </div>
                 <div className="f-filter circle-i"></div>
                 <div className="f-filter circle-iii"></div>
-
                 <img src={logo} alt="ogs-logo" />
         </div>
     )

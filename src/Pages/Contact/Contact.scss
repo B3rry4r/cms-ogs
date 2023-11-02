@@ -1,0 +1,249 @@
+@import "../../style.scss";
+
+.contact {
+    background-size: cover;
+    position: relative;
+    display: flex;
+    background: url('../../Assets/1.jpg');
+    background-position: center;
+    background-size: cover;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 5000;
+    overflow: hidden;
+    padding: 50px;
+    gap: 80px;
+    
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: #000000, $alpha: .85);
+        backdrop-filter: blur(4px);
+
+        @include mobile {
+            backdrop-filter: blur(10px);
+        }
+    }
+
+
+    .contents {
+        z-index: 20;
+        align-items: center;
+        justify-content: center;
+        // position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+        gap: 80px;
+
+        @include mobile{
+            padding: 40px 0 0;
+        }
+
+        .c-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 150px;
+
+            @include mobile{
+                flex-direction: column;
+                padding: 0 30px;
+                gap: 40px;
+            }
+
+            .left {
+
+                .logo {
+                    width: 350px;
+                    height: 350px;
+                    border-radius: 50%;
+                    // border: 2px solid white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+
+                    @include mobile{
+                        width: 200px;
+                        height: 200px;
+                    }
+
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        width: 350px;
+                        height: 350px;
+                        top: 0;
+                        bottom: 0;
+                        // transition: opacity 2s ease-in;
+                        left: 0;
+                        right: 0;
+                        border-bottom: 2px solid rgb(255, 255, 255);
+                        border-radius: 50%;
+                        margin: auto;
+                        z-index: 9;
+                        animation: spin 1s linear infinite;
+
+                        @include mobile{
+                            width: 200px;
+                            height: 200px;
+                        border-bottom: 1px solid rgb(255, 255, 255);
+                        }
+                    }
+
+                    @keyframes spin {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+
+                    img {
+                        width: 180px;
+
+                    @include mobile{
+                        width: 100px;
+                    }
+
+                    }
+                }
+            }
+
+            .right {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 60px;
+
+                @include mobile{
+                    gap: 30px;  
+                }
+
+                h1 {
+                    font-size: 40px;
+                    color: white;
+                    font-weight: 200;
+                    text-align: center;
+
+                    @include mobile{
+                        font-size: 20px;
+                    }
+                }
+
+                .contact-btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 30px;
+                    flex-direction: column;
+
+                    a {
+                        color: white;
+                        padding: 20px 30px;
+                        border-radius: 30px;
+                        border: 1px solid white;
+                        transition: all .4s ease-in-out;
+                        font-size: 13px;
+
+                        @include mobile{
+                            font-size: 12px;
+                            padding: 15px 25px;
+                        }
+
+                        &:hover {
+                            background-color: white;
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+
+        .c-bottom {
+            border-top: 1px solid white;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            padding: 50px;
+
+            ul {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+
+                li {
+                    cursor: pointer;
+                    color: white;
+                    font-weight: lighter;
+                    transition: all .4s ease-in-out;
+                    position: relative;
+
+                    @include mobile{
+                        font-size: 12px;
+                    }
+
+
+                    &:after {
+                        position: absolute;
+                        content: "";
+                        width: 0;
+                        transition: all .5s ease-in-out;
+                        height: 1px;
+                        bottom: -4px;
+                        left: 50%;
+                        background-color: rgba(255, 255, 255, .5);
+                        border-radius: 4px;
+                        z-index: 20;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        span {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            border: 1px solid white;
+            color: white;
+            padding: 15px 25px;
+            transition: all .5s ease-in-out;
+            font-size: 13px;
+            border-radius: 30px;
+            cursor: pointer;
+
+            @include mobile{
+                padding: 13px 24px;
+                top: 20px;
+                right: 30px;
+            }
+
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+
+    }
+}

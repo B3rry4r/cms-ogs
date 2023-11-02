@@ -11,6 +11,8 @@ import SignIn from './Pages/SignIn/SignIn';
 import Nominees from './Pages/Nominees/Nominees';
 import UserDashboard from './Components/UserDashboard/UserDashboard';
 import Voted from './Pages/Voted/Voted';
+import About from './Pages/About/About';
+import Contact from './Pages/Contact/Contact';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
       <Route exact path='/' element={<Home/>} />
       <Route path='/events' element={<Events/>} />
       <Route path='/projects' element={<Projects/>} />
+      <Route path='/about' element={<About/>} />
+      <Route path='/contact-us' element={<Contact/>} />
       <Route exact path='/nominees' element={<Nominees/>} />
       <Route path='/nominees/nominee/:id' element={<Voted/>} />
       <Route path='/sign-up' element={<SignUp/>} />

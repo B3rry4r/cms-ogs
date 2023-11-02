@@ -8,6 +8,7 @@ import Logo from '../../Assets/logo.png';
 import { slides, slides4 } from '../../Components/ImageData/ImageData';
 import CarouselMarquee from '../../Components/Marquee/Marquee';
 import UniqueCarousel from '../../Components/UniqueCarousel/UniqueCarousel';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -121,9 +122,9 @@ const Home = () => {
                         </div>
                         <div className="bottom">
                             <div className="line" />
-                            <p className="button">
+                            <Link to='/about' className="button">
                                 Read More
-                            </p>
+                            </Link>
                         </div>
                     </div>
                 </div>

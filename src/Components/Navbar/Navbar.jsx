@@ -125,11 +125,11 @@ const Navbar = () => {
               Contact-Us
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink activeClassName='active' to='/OGS'>
               OGS
             </NavLink>
-          </li>
+          </li> */}
           {
             user ? (
               <li className='sign-out' onClick={handleLogOut} >
@@ -200,11 +200,11 @@ const Navbar = () => {
                   Contact-Us
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink activeClassName='active' to='/OGS' onClick={openMenu} >
                   OGS
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="bottom">
